@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import SocialIcons from "./SocialIcons";
 import Grainient from "./Grainient";
 import BlurText from "./BlurText";
-
+import SplitText from "./SplitText";
 const handleAnimationComplete = () => {
   console.log('Animation completed!');
 };
+
 const Hero = () => {
   const scrollToProjects = () => {
     document
@@ -39,14 +40,39 @@ const Hero = () => {
           onAnimationComplete={handleAnimationComplete}
           className="text-sm md:text-base font-medium text-purple-600 mb-4 tracking-widest uppercase justify-center"
         />
-
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-foreground mb-4 leading-tight">
-          Archita Das
-        </h1>
-
-        <p className="text-lg md:text-xl text-muted-foreground mb-2 font-medium">
-          Aspiring Software Developer | Full Stack Enthusiast
-        </p>
+        <SplitText
+          text="Archita Das"
+          //className="text-2xl font-semibold text-center"
+          delay={50}
+          duration={1.5}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="center"
+          onLetterAnimationComplete={handleAnimationComplete}
+          className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-foreground mb-1 leading-tight"
+        />
+        <p>
+        <SplitText
+          text="Aspiring Software Developer | Full Stack Enthusiast"
+          //className="text-2xl font-semibold text-center"
+          delay={50}
+          duration={2}
+          ease="power3.out"
+          splitType="chars"
+          from={{ opacity: 0, y: 40 }}
+          to={{ opacity: 1, y: 0 }}
+          threshold={0.1}
+          rootMargin="-100px"
+          textAlign="center"
+          onLetterAnimationComplete={handleAnimationComplete}
+          className="text-lg md:text-xl text-muted-foreground mb-2 font-medium"
+        />
+</p>
+        
 
         <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
           Passionate about building elegant web applications and solving complex problems with clean, efficient code.
