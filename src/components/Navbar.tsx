@@ -26,64 +26,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "glass shadow-lg"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-4 md:px-8 flex items-center justify-between h-16">
-        <a
-          href="#"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="text-xl font-bold text-primary tracking-tight"
-        >
-          Archita<span className="text-foreground">.</span>
-        </a>
-
-        {/* Desktop */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navItems.map(({ label, href }) => (
-            <li key={label}>
-              <button
-                onClick={() => handleClick(href)}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors duration-200"
-              >
-                {label}
-              </button>
-            </li>
-          ))}
-        </ul>
-
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-foreground"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {isOpen && (
-        <div className="md:hidden glass border-t border-border">
-          <ul className="flex flex-col py-4 px-4 gap-2">
-            {navItems.map(({ label, href }) => (
-              <li key={label}>
-                <button
-                  onClick={() => handleClick(href)}
-                  className="w-full text-left py-2 px-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors"
-                >
-                  {label}
-                </button>
-              </li>
-            ))}
-          </ul>
+    <nav className="absolute top-0 w-full z-50 px-8 py-6 flex flex-col md:flex-row justify-between items-center bg-transparent backdrop-blur-sm gap-4 md:gap-0 text-white">
+        <div className="flex gap-8 text-xs font-bold tracking-[0.3em] uppercase opacity-80">
+          <a className="hover:opacity-100 transition-opacity" href="#work">Work</a>
+          <a className="hover:opacity-100 transition-opacity" href="#about">About</a>
         </div>
-      )}
-    </nav>
+        <div className="md:absolute md:left-1/2 md:-translate-x-1/2 text-lg font-black tracking-[0.5em] uppercase mt-2 md:mt-0">
+          ARCHITA
+        </div>
+        <div className="flex gap-8 text-xs font-bold tracking-[0.3em] uppercase opacity-80">
+          <a className="hover:opacity-100 transition-opacity" href="#shop">Shop</a>
+          <a className="hover:opacity-100 transition-opacity" href="#contact">Contact</a>
+        </div>
+      </nav>
   );
 };
 
