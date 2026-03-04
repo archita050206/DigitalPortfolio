@@ -39,7 +39,7 @@ const Skills = () => {
     <section
       ref={sectionRef}
       id="skills"
-      className="relative min-h-screen bg-[#FBBF7A] dark:bg-[#5c3a1e] text-slate-900 dark:text-slate-100 transition-colors duration-500 py-32 px-6 md:px-20 lg:px-40 overflow-hidden"
+      className="relative min-h-screen bg-[#FBBF7A] dark:bg-[#5c3a1e] text-slate-900 dark:text-slate-100 transition-colors duration-500 py-28 px-6 md:px-20 lg:px-40 overflow-hidden"
     >
       {/* Abstract Background Elements */}
       <div className="absolute rounded-full bg-slate-900/5 dark:bg-white/5 w-[400px] h-[400px] -top-20 -left-20 z-0"></div>
@@ -50,16 +50,16 @@ const Skills = () => {
       <div className="relative z-10 max-w-[1200px] mx-auto">
         {/* Header Section */}
         <div
-          className={`flex flex-col gap-6 mb-20 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          className={`flex flex-col gap-6 mb-16 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
         >
           <div className="bg-slate-900/10 dark:bg-white/10 w-fit px-4 py-1 rounded-full backdrop-blur-sm border border-slate-900/10 dark:border-white/10">
             <p className="text-slate-800 dark:text-white/80 text-xs font-black uppercase tracking-[0.3em]">Portfolio 2026</p>
           </div>
-          <h1 className="text-slate-900 dark:text-white text-6xl md:text-7xl font-black leading-none tracking-tighter uppercase drop-shadow-sm">
+          <h1 className="text-slate-800 dark:text-white text-6xl md:text-6xl font-black leading-none tracking-tighter uppercase drop-shadow-sm">
             SKILLS &amp; <br />EXPERTISE
           </h1>
-          <p className="text-slate-800 dark:text-white/80  font-medium max-w-xl leading-relaxed text-lg">
+          <p className="text-gray-700 dark:text-white/80  font-medium max-w-xl leading-relaxed text-lg">
             Building strong foundations in software engineering through problem-solving, full-stack development, and core computer science principles.
           </p>
         </div>
@@ -68,24 +68,24 @@ const Skills = () => {
         {skillCategories.map((category, index) => (
           <div
             key={index}
-            className={`mb-20 transition-all duration-1000`}
+            className={`mb-16 transition-all duration-1000`}
             style={{
               transitionDelay: `${200 + index * 100}ms`,
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? "translateY(0)" : "translateY(40px)"
             }}
           >
-            <div className="flex items-center gap-4 mb-8">
-              <h2 className="text-slate-900 dark:text-white text-4xl md:text-3xl font-black tracking-tighter uppercase">
+            <div className="flex items-center gap-4 mb-7">
+              <h2 className="text-slate-800 dark:text-white text-4xl md:text-3xl font-black tracking-tighter uppercase">
                 {category.title}
               </h2>
-              <div className="h-1 flex-1 bg-slate-900/10 dark:bg-white/20"></div>
+              <div className="h-1 flex-1 bg-slate-800/10 dark:bg-white/20"></div>
             </div>
             <div className="flex gap-4 flex-wrap">
               {category.skills.map((skill, skillIndex) => (
                 <div
                   key={skillIndex}
-                  className="flex h-12 items-center justify-center rounded-full bg-[#14B8A6] dark:bg-[#0f4c5c] px-10 shadow-lg hover:bg-slate-900 dark:hover:bg-white hover:-translate-y-1 transition-all duration-300 group cursor-default"
+                  className="flex h-10 items-center justify-center rounded-full bg-[#14B8A6] dark:bg-[#0f4c5c] px-9 shadow-lg hover:bg-[#134d5c] dark:hover:bg-white hover:-translate-y-1 transition-all duration-300 group cursor-default"
                 >
                   <p className="text-white dark:text-slate-100 group-hover:text-white dark:group-hover:text-slate-900 text-small font-black uppercase tracking-wider transition-colors duration-300">
                     {skill}

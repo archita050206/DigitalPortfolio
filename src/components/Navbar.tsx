@@ -35,7 +35,7 @@ const Navbar = () => {
           ARCHITA
         </div>
         <div className="flex gap-8 text-xs font-bold tracking-[0.3em] uppercase opacity-80">
-          <a className="hover:opacity-100 transition-opacity" href="#shop">Shop</a>
+          <a className="hover:opacity-100 transition-opacity" href="#shop">Skills</a>
           <a className="hover:opacity-100 transition-opacity" href="#contact">Contact</a>
         </div>
       </nav>

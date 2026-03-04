@@ -49,7 +49,7 @@ const SkillsIntro = () => {
                         left: "10%",
                         transform: isVisible ? "scale(2) rotate(90deg)" : "scale(0.5) rotate(0deg)",
                         opacity: isVisible ? 0.35 : 0.15,
-                        transition: "all 1.2s cubic-bezier(0.4, 0, 0.2, 1)",
+                        transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
                     }}
                 />
                 <div
@@ -59,7 +59,7 @@ const SkillsIntro = () => {
                         right: "8%",
                         transform: isVisible ? "scale(1.5) rotate(-60deg)" : "scale(0.3) rotate(0deg)",
                         opacity: isVisible ? 0.25 : 0.1,
-                        transition: "all 1.4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s",
+                        transition: "all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.1s",
                     }}
                 />
                 <div
@@ -70,7 +70,7 @@ const SkillsIntro = () => {
                         background: "radial-gradient(circle, rgba(253,224,71,0.3) 0%, transparent 70%)",
                         transform: isVisible ? "scale(2)" : "scale(0)",
                         opacity: isVisible ? 0.5 : 0,
-                        transition: "all 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s",
+                        transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s",
                     }}
                 />
                 <div
@@ -81,7 +81,7 @@ const SkillsIntro = () => {
                         background: "radial-gradient(circle, rgba(167,139,250,0.3) 0%, transparent 70%)",
                         transform: isVisible ? "scale(2.5)" : "scale(0)",
                         opacity: isVisible ? 0.4 : 0,
-                        transition: "all 1.1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s",
+                        transition: "all 0.55s cubic-bezier(0.4, 0, 0.2, 1) 0.25s",
                     }}
                 />
 
@@ -90,7 +90,7 @@ const SkillsIntro = () => {
                     className="absolute top-1/2 left-0 h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent"
                     style={{
                         width: isVisible ? "100%" : "0%",
-                        transition: "width 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.3s",
+                        transition: "width 0.75s cubic-bezier(0.4, 0, 0.2, 1) 0.15s",
                     }}
                 />
             </div>
@@ -99,11 +99,11 @@ const SkillsIntro = () => {
             <div className="relative z-10 text-center px-6 max-w-3xl">
                 {/* Line 1 */}
                 <p
-                    className="text-sm md:text-base tracking-[0.4em] uppercase text-white/60 mb-6 font-light"
+                    className="text-sm md:text-base tracking-[0.4em] uppercase text-white/80 mb-6 font-light"
                     style={{
                         opacity: isVisible ? 1 : 0,
                         transform: isVisible ? "translateY(0px)" : "translateY(40px)",
-                        transition: "all 1.2s ease-in-out 0.2s",
+                        transition: "all 0.6s ease-in-out 0.1s",
                     }}
                 >
                     Now, let me show you
@@ -115,15 +115,15 @@ const SkillsIntro = () => {
                     style={{
                         opacity: isVisible ? 1 : 0,
                         transform: isVisible ? "translateY(0px)" : "translateY(50px)",
-                        transition: "all 1.4s ease-in-out 0.5s",
+                        transition: "all 0.7s ease-in-out 0.25s",
                     }}
                 >
                     WHAT I
                     <br />
                     <span
-                        className="inline-block bg-gradient-to-b from-cyan-200 to-indigo-500 bg-clip-text text-transparent "
+                        className="inline-block bg-gradient-to-b from-cyan-100 to-indigo-600 bg-clip-text text-transparent "
                         style={{
-                           // background: "linear-gradient(135deg, #FDE047, #A78BFA)",
+                            // background: "linear-gradient(135deg, #FDE047, #A78BFA)",
                             WebkitBackgroundClip: "text",
                             WebkitTextFillColor: "transparent",
                         }}
@@ -134,11 +134,11 @@ const SkillsIntro = () => {
 
                 {/* Line 3 */}
                 <p
-                    className="text-base md:text-lg text-white/50 max-w-md mx-auto leading-relaxed"
+                    className="text-base md:text-lg text-white/90 max-w-md mx-auto leading-relaxed"
                     style={{
                         opacity: isVisible ? 1 : 0,
                         transform: isVisible ? "translateY(0px)" : "translateY(40px)",
-                        transition: "all 1.3s ease-in-out 0.8s",
+                        transition: "all 0.65s ease-in-out 0.4s",
                     }}
                 >
                     A curated collection of technologies, tools and skills I've honed through learning and building.
@@ -149,7 +149,7 @@ const SkillsIntro = () => {
                     className="mt-16 flex flex-col items-center gap-2"
                     style={{
                         opacity: isVisible ? 1 : 0,
-                        transition: "opacity 1.2s ease-in-out 1s",
+                        transition: "opacity 0.6s ease-in-out 0.5s",
                         animation: isVisible ? "float-bounce 2s ease-in-out infinite" : "none",
                     }}
                 >

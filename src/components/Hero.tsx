@@ -61,8 +61,8 @@ const Hero = () => {
             <div className="flex justify-center lg:justify-start">
               <div className="h-[2px] w-full max-w-[256px] bg-white/40"></div>
             </div>
-            <div className="space-y-2 max-w-xs mx-auto lg:mx-0">
-              <p className="text-sm tracking-wide opacity-90 leading-relaxed italic">
+            <div className="space-y-2 max-w-xs text-white mx-auto lg:mx-0">
+              <p className="text-sm tracking-wide leading-relaxed italic">
                 Aspiring Software Developer | Full Stack Enthusiast
               </p>
             </div>
@@ -96,7 +96,7 @@ const Hero = () => {
               <div className="h-[2px] w-full max-w-[256px] bg-white/40"></div>
             </div>
             <div className="space-y-4 max-w-xs mx-auto lg:ml-auto lg:mr-0">
-              <p className="font-['Noto_Sans_JP',sans-serif] text-sm tracking-wide leading-loose opacity-90">
+              <p className="font-['Noto_Sans_JP',sans-serif] text-sm tracking-wide leading-loose ">
                 Passionate about building elegant web applications and solving
                 complex problems with clean, efficient code.
               </p>
