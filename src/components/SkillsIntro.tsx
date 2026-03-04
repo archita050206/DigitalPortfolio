@@ -121,9 +121,9 @@ const SkillsIntro = () => {
                     WHAT I
                     <br />
                     <span
-                        className="inline-block"
+                        className="inline-block bg-gradient-to-b from-cyan-200 to-indigo-500 bg-clip-text text-transparent "
                         style={{
-                            background: "linear-gradient(135deg, #FDE047, #A78BFA)",
+                           // background: "linear-gradient(135deg, #FDE047, #A78BFA)",
                             WebkitBackgroundClip: "text",
                             WebkitTextFillColor: "transparent",
                         }}
