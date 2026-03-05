@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const SkillsIntro = () => {
     const sectionRef = useRef<HTMLElement>(null);
@@ -21,6 +22,20 @@ const SkillsIntro = () => {
 
         return () => observer.disconnect();
     }, []);
+
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start 90%", "center center"]
+    });
+
+    const line1Opacity = useTransform(scrollYProgress, [0.1, 0.4], [0, 1]);
+    const line1Y = useTransform(scrollYProgress, [0.1, 0.4], [40, 0]);
+
+    const line2Opacity = useTransform(scrollYProgress, [0.3, 0.7], [0, 1]);
+    const line2Y = useTransform(scrollYProgress, [0.3, 0.7], [50, 0]);
+
+    const line3Opacity = useTransform(scrollYProgress, [0.6, 1.0], [0, 1]);
+    const line3Y = useTransform(scrollYProgress, [0.6, 1.0], [40, 0]);
 
     return (
         <section
@@ -98,24 +113,22 @@ const SkillsIntro = () => {
             {/* Main text content */}
             <div className="relative z-10 text-center px-6 max-w-3xl">
                 {/* Line 1 */}
-                <p
+                <motion.p
                     className="text-sm md:text-base tracking-[0.4em] uppercase text-white/80 mb-6 font-light"
                     style={{
-                        opacity: isVisible ? 1 : 0,
-                        transform: isVisible ? "translateY(0px)" : "translateY(40px)",
-                        transition: "all 0.6s ease-in-out 0.1s",
+                        opacity: line1Opacity,
+                        y: line1Y,
                     }}
                 >
                     Now, let me show you
-                </p>
+                </motion.p>
 
                 {/* Line 2 — Main statement */}
-                <h2
+                <motion.h2
                     className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white leading-[0.9] mb-8"
                     style={{
-                        opacity: isVisible ? 1 : 0,
-                        transform: isVisible ? "translateY(0px)" : "translateY(50px)",
-                        transition: "all 0.7s ease-in-out 0.25s",
+                        opacity: line2Opacity,
+                        y: line2Y,
                     }}
                 >
                     WHAT I
@@ -123,34 +136,31 @@ const SkillsIntro = () => {
                     <span
                         className="inline-block bg-gradient-to-b from-cyan-100 to-indigo-600 bg-clip-text text-transparent "
                         style={{
-                            // background: "linear-gradient(135deg, #FDE047, #A78BFA)",
                             WebkitBackgroundClip: "text",
                             WebkitTextFillColor: "transparent",
                         }}
                     >
                         CAN DO
                     </span>
-                </h2>
+                </motion.h2>
 
                 {/* Line 3 */}
-                <p
+                <motion.p
                     className="text-base md:text-lg text-white/90 max-w-md mx-auto leading-relaxed"
                     style={{
-                        opacity: isVisible ? 1 : 0,
-                        transform: isVisible ? "translateY(0px)" : "translateY(40px)",
-                        transition: "all 0.65s ease-in-out 0.4s",
+                        opacity: line3Opacity,
+                        y: line3Y,
                     }}
                 >
                     A curated collection of technologies, tools and skills I've honed through learning and building.
-                </p>
+                </motion.p>
 
                 {/* Scroll down arrow */}
-                <div
+                <motion.div
                     className="mt-16 flex flex-col items-center gap-2"
                     style={{
-                        opacity: isVisible ? 1 : 0,
-                        transition: "opacity 0.6s ease-in-out 0.5s",
-                        animation: isVisible ? "float-bounce 2s ease-in-out infinite" : "none",
+                        opacity: line3Opacity,
+                        animation: "float-bounce 2s ease-in-out infinite",
                     }}
                 >
                     <span className="text-[10px] tracking-[0.3em] uppercase text-white/40">
@@ -169,7 +179,7 @@ const SkillsIntro = () => {
                             d="M19 14l-7 7m0 0l-7-7m7 7V3"
                         />
                     </svg>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
